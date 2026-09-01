@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محصولات و فروشگاه | فروشگاه آنلاین لوکس پارسی</title>
+  <meta name="description" content="کاتالوگ کامل انواع گجت‌های هوشمند، هدفون‌های های‌فای، ساعت‌های هوشمند و لوازم جانبی دیجیتال با امکان فیلتر و سفارش تلگرام." />
+  <meta property="og:title" content="محصولات و فروشگاه | فروشگاه لوکس پارسی" />
+  <meta property="og:type" content="website" />
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="glass-nav" id="main-navbar">
+    <div class="container navbar">
+      <!-- Brand Logo -->
+      <a href="index.html" class="nav-brand" id="brand-logo-link">
+        <div class="brand-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <span>لوکس استور</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link" id="nav-home">صفحه اصلی</a></li>
+        <li><a href="products.html" class="nav-link active" id="nav-products">فروشگاه و محصولات</a></li>
+        <li><a href="about.html" class="nav-link" id="nav-about">درباره ما</a></li>
+        <li><a href="contact.html" class="nav-link" id="nav-contact">تماس با ما</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <button class="btn-icon cart-trigger" id="cart-drawer-trigger" onclick="openCartDrawer()" title="سبد خرید">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge" style="display: none;">۰</span>
+        </button>
+
+        <a href="https://t.me/ShopAdmin_Luxury" target="_blank" class="btn btn-telegram btn-sm" id="nav-telegram-cta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+          <span>سفارش در تلگرام</span>
+        </a>
+
+        <button class="btn-icon menu-toggle" id="mobile-menu-btn" onclick="toggleMobileMenu()" title="منو">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header style="padding: 40px 0 20px;">
+    <div class="container">
+      <div class="glass-panel" style="padding: 30px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+        <div>
+          <div class="glass-badge primary" style="margin-bottom: 8px;">کاتالوگ ۲۰۲۵</div>
+          <h1 style="font-size: 2rem; font-weight: 800;">محصولات و گجت‌های هوشمند</h1>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 4px;">
+            تضمین اصالت کالا و ارسال سریع به سراسر کشور
+          </p>
+        </div>
+        <div>
+          <span class="glass-badge emerald" id="catalog-count-badge">نمایش ۸ کالا</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter & Search Toolbar -->
+  <section class="container" style="margin-top: 24px;">
+    <div class="glass-panel filter-bar">
+      <!-- Category Chips -->
+      <div class="filter-chips" id="category-chips-list">
+        <button class="filter-chip active" data-category="all">همه دسته‌ها</button>
+        <button class="filter-chip" data-category="audio">هدفون و صوتی</button>
+        <button class="filter-chip" data-category="wearable">گجت‌های پوشیدنی</button>
+        <button class="filter-chip" data-category="accessories">اکسسوری و دیجیتال</button>
+        <button class="filter-chip" data-category="gadgets">گجت و شارژر</button>
+      </div>
+
+      <!-- Search & Sort Controls -->
+      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <!-- Search Input -->
+        <div class="filter-search-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-dim);">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="product-search-input" class="filter-search-input" placeholder="جستجوی نام یا مدل محصول..." />
+        </div>
+
+        <!-- Sort Select -->
+        <select id="product-sort-select" class="form-select" style="width: auto; padding: 7px 14px; font-size: 0.88rem; background: rgba(255,255,255,0.06); color: #fff;">
+          <option value="default">مرتب‌سازی پیش‌فرض</option>
+          <option value="price-asc">ارزان‌ترین به گران‌ترین</option>
+          <option value="price-desc">گران‌ترین به ارزان‌ترین</option>
+          <option value="rating">محبوب‌ترین و بیشترین امتیاز</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <main class="container" style="padding: 10px 20px 80px;">
+    <div class="products-grid" id="catalog-products-grid">
+      <!-- Injected via JS -->
+    </div>
+
+    <!-- Empty Results State -->
+    <div id="no-products-found" style="display: none; text-align: center; padding: 60px 20px;">
+      <div style="font-size: 3.5rem; margin-bottom: 12px;">🔍</div>
+      <h3 style="font-size: 1.3rem; margin-bottom: 8px;">محصولی مطابق با جستجوی شما یافت نشد!</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">لطفاً کلمات کلیدی دیگری را جستجو کنید یا فیلترها را ریست نمایید.</p>
+      <button class="btn btn-secondary" onclick="resetFilters()">مشاهده همه محصولات</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="nav-brand">
+            <div class="brand-logo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <span>لوکس استور پارسی</span>
+          </div>
+          <p class="footer-brand-desc">
+            مرجع تخصصی عرضه گجت‌های هوشمند، هدفون‌های های‌فای، ساعت‌های هوشمند و اکسسوری‌های مدرن با اصالت تضمین‌شده.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">دسترسی سریع</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="products.html">کاتالوگ محصولات</a></li>
+            <li><a href="about.html">داستان ما و افتخارات</a></li>
+            <li><a href="contact.html">ارتباط و پشتیبانی</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">دسته‌بندی‌ها</h4>
+          <ul class="footer-links">
+            <li><a href="products.html?category=audio">هدفون و سیستم‌های صوتی</a></li>
+            <li><a href="products.html?category=wearable">ساعت‌های هوشمند</a></li>
+            <li><a href="products.html?category=accessories">کیبورد و اکسسوری</a></li>
+            <li><a href="products.html?category=gadgets">گجت‌ها و شارژرها</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">ارتباط با ما</h4>
+          <ul class="footer-links">
+            <li><span>📍 تهران، برج تجارت الکترونیک، واحد ۸</span></li>
+            <li><span>📞 تلفن: ۰۲۱-۸۸۹۹۰۰۱۱</span></li>
+            <li><span>💬 تلگرام: @ShopAdmin_Luxury</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© ۲۰۲۵ تمامی حقوق برای فروشگاه لوکس پارسی محفوظ است.</div>
+        <div>طراحی شده با استانداردهای مدرن شیشه‌ای و راست‌چین</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-over Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <div class="cart-title">
+          <span>سبد خرید شما</span>
+          <span class="glass-badge emerald cart-badge">۰</span>
+        </div>
+        <button class="btn-icon" onclick="closeCartDrawer()" title="بستن">✕</button>
+      </div>
+
+      <div class="cart-items-list" id="cart-items-container"></div>
+
+      <div class="cart-footer" id="cart-footer-container" style="display: none;">
+        <div class="cart-summary-row">
+          <span>هزینه ارسال</span>
+          <span style="color: #34d399; font-weight: 700;">رایگان (پیشنهاد ویژه)</span>
+        </div>
+        <div class="cart-summary-row cart-summary-total">
+          <span>مبلغ قابل پرداخت</span>
+          <span id="cart-total-price">۰ تومان</span>
+        </div>
+        <button class="btn btn-telegram" style="width: 100%; margin-top: 16px;" onclick="openTelegramCheckoutModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+          <span>تکمیل و ثبت نهایی سفارش در تلگرام</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Telegram Checkout Modal -->
+  <div class="modal-overlay" id="telegram-checkout-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h4 style="font-size: 1.15rem; font-weight: 700;">اطلاعات گیرنده جهت ثبت سفارش</h4>
+        <button class="btn-icon" onclick="closeTelegramCheckoutModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 18px;">
+          لطفاً مشخصات خود را وارد کنید تا پیام سفارش حاوی فاکتور و اطلاعات تماس در تلگرام باز شود.
+        </p>
+        <form onsubmit="submitTelegramOrder(event)">
+          <div class="form-group">
+            <label class="form-label" for="order-customer-name">نام و نام خانوادگی <span style="color: #f43f5e;">*</span></label>
+            <input type="text" id="order-customer-name" class="form-input" placeholder="مثال: علی رضایی" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="order-customer-phone">شماره همراه (واتساپ/تلگرام) <span style="color: #f43f5e;">*</span></label>
+            <input type="tel" id="order-customer-phone" class="form-input" placeholder="مثال: ۰۹۱۲۳۴۵۶۷۸۹" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="order-customer-address">آدرس پستی و توضیحات (اختیاری)</label>
+            <textarea id="order-customer-address" class="form-textarea" rows="3" placeholder="شهر، خیابان، پلاک، واحد یا توضیحات تکمیلی..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-telegram" style="width: 100%; margin-top: 10px;">
+            <span>ارسال فاکتور به تلگرام و تأیید نهایی</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickview-modal">
+    <div class="modal-container" style="max-width: 680px;">
+      <div class="modal-header">
+        <h4 style="font-size: 1.1rem; font-weight: 700;">مشخصات و بررسی سریع محصول</h4>
+        <button class="btn-icon" onclick="closeQuickView()">✕</button>
+      </div>
+      <div class="modal-body" id="quickview-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // State management for Catalog filtering
+    let currentCategory = 'all';
+    let searchQuery = '';
+    let sortOption = 'default';
+
+    // Parse URL param for initial category (e.g. ?category=audio)
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    if (categoryParam) {
+      currentCategory = categoryParam;
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById('catalog-products-grid');
+      const countBadge = document.getElementById('catalog-count-badge');
+      const emptyState = document.getElementById('no-products-found');
+      if (!grid || typeof PRODUCTS_DATA === 'undefined') return;
+
+      // Filter by category
+      let filtered = PRODUCTS_DATA.filter(p => {
+        if (currentCategory !== 'all' && p.category !== currentCategory) {
+          return false;
+        }
+        if (searchQuery.trim() !== '') {
+          const q = searchQuery.toLowerCase().trim();
+          const matchTitle = p.title.toLowerCase().includes(q);
+          const matchDesc = p.description.toLowerCase().includes(q);
+          const matchCat = p.categoryName.toLowerCase().includes(q);
+          return matchTitle || matchDesc || matchCat;
+        }
+        return true;
+      });
+
+      // Sort
+      if (sortOption === 'price-asc') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortOption === 'price-desc') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sortOption === 'rating') {
+        filtered.sort((a, b) => b.rating - a.rating);
+      }
+
+      // Update count badge
+      if (countBadge) {
+        countBadge.textContent = `نمایش ${toPersianDigits(filtered.length)} کالا`;
+      }
+
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        emptyState.style.display = 'block';
+      } else {
+        grid.style.display = 'grid';
+        emptyState.style.display = 'none';
+
+        grid.innerHTML = filtered.map(product => `
+          <div class="product-card">
+            <div class="product-image-box">
+              <img src="${product.image}" alt="${product.title}" class="product-img" loading="lazy" />
+              <div class="product-badges">
+                ${product.badge ? `<span class="glass-badge ${product.badgeType || 'primary'}">${product.badge}</span>` : ''}
+              </div>
+              <div class="product-quick-actions">
+                <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="openQuickView('${product.id}')">
+                  بررسی سریع
+                </button>
+                <button class="btn btn-telegram btn-sm" onclick="orderSingleProductTelegram('${product.id}')" title="سفارش مستقیم در تلگرام">
+                  تلگرام
+                </button>
+              </div>
+            </div>
+
+            <div class="product-content">
+              <span class="product-category">${product.categoryName}</span>
+              <h3 class="product-title" title="${product.title}">${product.title}</h3>
+              
+              <div class="product-meta">
+                <div class="product-price-box">
+                  ${product.oldPrice ? `<span class="product-old-price">${formatPrice(product.oldPrice)}</span>` : ''}
+                  <span class="product-price">${formatPrice(product.price)} <span class="product-currency">تومان</span></span>
+                </div>
+              </div>
+
+              <div class="product-card-btns">
+                <button class="btn btn-primary btn-sm" onclick="addToCart('${product.id}', 1)">
+                  <span>افزودن به سبد</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function resetFilters() {
+      currentCategory = 'all';
+      searchQuery = '';
+      const searchInput = document.getElementById('product-search-input');
+      if (searchInput) searchInput.value = '';
+
+      const chips = document.querySelectorAll('.filter-chip');
+      chips.forEach(c => {
+        c.classList.toggle('active', c.getAttribute('data-category') === 'all');
+      });
+
+      renderCatalog();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set active chip if category param was in URL
+      const chips = document.querySelectorAll('.filter-chip');
+      chips.forEach(chip => {
+        const cat = chip.getAttribute('data-category');
+        chip.classList.toggle('active', cat === currentCategory);
+
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          currentCategory = cat;
+          renderCatalog();
+        });
+      });
+
+      // Search input event
+      const searchInput = document.getElementById('product-search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value;
+          renderCatalog();
+        });
+      }
+
+      // Sort select event
+      const sortSelect = document.getElementById('product-sort-select');
+      if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => {
+          sortOption = e.target.value;
+          renderCatalog();
+        });
+      }
+
+      renderCatalog();
+    });
+  </script>
+</body>
+</html>
